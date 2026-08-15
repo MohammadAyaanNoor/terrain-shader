@@ -25,18 +25,18 @@ const scene = new THREE.Scene()
 // Loaders
 const hdrloader  = new HDRLoader()
 const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('../static/draco/')
+dracoLoader.setDecoderPath('/static/draco/')
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
 const textureLoader = new THREE.TextureLoader();
-const perlinTexture = textureLoader.load('../static/perlin.png')
+const perlinTexture = textureLoader.load('/static/perlin.png')
 perlinTexture.wrapS = THREE.RepeatWrapping
 perlinTexture.wrapT = THREE.RepeatWrapping
 
 /**
  * Environment map
  */
-hdrloader.load('../static/aerodynamics_workshop.hdr', (environmentMap) =>
+hdrloader.load('/static/aerodynamics_workshop.hdr', (environmentMap) =>
 {
     environmentMap.mapping = THREE.EquirectangularReflectionMapping
 
